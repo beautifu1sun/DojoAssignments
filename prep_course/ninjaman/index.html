@@ -1,0 +1,430 @@
+<html>
+<head>
+<title>NinjaMan</title>
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    color: sandybrown;
+}
+.row{
+    line-height: 0;
+    
+}
+.wall{ 
+    background-color: darkslateblue;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.sushi{
+    background-image: url(img/sushi.png);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.onigiri{
+    background-image: url(img/onigiri.png);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.blank{
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+#start{
+    background-color: rgb(27, 1, 49);
+    text-align: center;
+    font-size: 200%;
+    width: 800px;
+    height: 40px;
+}
+#stats{
+    background-color: rgb(27, 1, 49);
+    width: 800px;
+    height: 40px;
+    font-size: 200%;
+    text-align: center;
+}
+#ninjaman{
+    background-image: url(img/ninja.gif);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 00px;
+}
+#ghost2{
+    background-image: url(img/pumpky.gif);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 800px;
+    left: 720px;
+}
+#ghost3{
+    background-image: url(img/pumpky.gif);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 800px;
+    left: 760px;
+}
+#ghost1{
+    background-image: url(img/pumpky.gif);
+    background-size: contain;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 800px;
+    left: 680px;
+}
+.life1{
+    background-image: url(img/life.png);
+    background-size: contain;
+    background-color:  rgb(27, 1, 49);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 840px;
+    left: 750px;
+}
+.life2{
+    background-image: url(img/life.png);
+    background-size: contain;
+    background-color:  rgb(27, 1, 49);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 840px;
+    left: 700px;
+}
+.life3{
+    background-image: url(img/life.png);
+    background-size: contain;
+    background-color:  rgb(27, 1, 49);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 840px;
+    left: 650px;
+}
+</style>
+</head>
+
+
+<body>
+    <div id = 'start'>
+        PRESS ENTER TO START THE GAME!
+    </div>
+    <div id = 'world'>
+    </div>
+    <div id = 'ninjaman'>
+    </div>
+    <div id = 'ghost1'>
+    </div>
+    <div id = 'ghost2'>
+    </div>
+    <div id = 'ghost3'>
+    </div>
+    <div id = 'stats'>
+           SCORE: 0
+    </div>
+    <div id = 'lifes'></div>
+    </body>
+</body>
+
+<script type="text/javascript">
+var world = [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+]
+var worldDict = {
+    0: 'blank',
+    1: 'wall',
+    2: 'sushi',
+    3: 'onigiri'
+}
+var ninjaman = {
+    x: 0,
+    y: 0
+}
+var ghost3 = {
+    x: 19,
+    y: 19
+}
+var ghost2 = {
+    x: 18,
+    y: 19,
+}
+var ghost1 = {
+    x: 17,
+    y: 19
+}
+var score = 0;
+var hasGameStarted = 0;
+var hasGameEnded = 0;
+var interval = 0;
+var lifesRemaining = 0;
+var foodLeft = 0;
+
+drawWorld();
+
+function ruleRandom(num, y, x){
+    if (x==0){
+        if (((world[y-1][x]==2)||(world[y-1][x]==3))&&(world[y-1][x+1]==1)) { 
+        return getRandom(2)+1;
+    }
+        else return num;
+    } 
+    else if(x==world[y].length-1){
+        if (((world[y-1][x-1]==1)||(world[y][x-1]==1))&&((world[y-1][x]==2)||(world[y-1][x]==3))){
+        return getRandom(2)+1;
+    }
+        else return num;
+    } 
+    else if(((world[y-1][x-1]==1)||(world[y][x-1]==1))&&((world[y-1][x]==2)||(world[y-1][x]==3))&&(world[y-1][x+1]==1)){
+        return getRandom(2)+1;
+    }
+    else return num;
+}
+
+function getRandom(num){
+    return Math.floor(Math.random() * Math.floor(num)) + 1;
+}
+
+function createWorld(){
+    //first row - no walls
+    for (var row0 = 1; row0 < world[0].length; row0++){
+        world[0][row0]=getRandom(2)+1;
+    }
+    //rows 1-18 are random
+    for (var row = 1; row < world.length - 1; row++){
+        for (var x = 0; x < world[row].length; x++){
+            world[row][x]=ruleRandom(getRandom(3), row, x);
+        }
+    }
+    //last row - no walls
+    for (var rowLast = 0; rowLast < world[world.length-1].length-3; rowLast++){
+        world[world.length-1][rowLast]=getRandom(2)+1;
+    }
+    drawWorld();
+}
+
+function drawWorld(){
+    foodLeft = 0;
+    var output = '';
+    var lifes = '';
+    for (var row = 0; row < world.length; row++){
+        output += "<div class = 'row'>"
+            for (var x = 0; x < world[row].length; x++){
+                if ((world[row][x]==2)||(world[row][x]==3)) foodLeft++;
+                output += "<div class = '" + worldDict[world[row][x]] + "'></div>"
+            }
+            output += "</div>";
+    }
+    document.getElementById('world').innerHTML = output;
+    for (var l = 1; l <= lifesRemaining; l++){
+        lifes += "<div class = 'life" + l + "'></div>" 
+    }
+    document.getElementById('lifes').innerHTML = lifes;
+    if (hasGameEnded==1){
+        clearInterval(interval);
+        ninjaman.x=0;
+        ninjaman.y=0;
+        document.getElementById('start').innerHTML = "GAME OVER. YOU LOST ALL YOUR LIFES!"
+    }
+    if ((foodLeft==0)&&(hasGameStarted==1)){
+        clearInterval(interval);
+        hasGameEnded=1;
+        document.getElementById('start').innerHTML = "YOU WON! CONGRATULATIONS!"
+
+    }
+}
+
+function updateScore(num){
+    score+= num;
+    document.getElementById('stats').innerHTML = "SCORE: " + score;
+}
+
+function drawNinja(){
+    document.getElementById("ninjaman").style.left = ninjaman.x * 40 +"px";
+    document.getElementById("ninjaman").style.top = (ninjaman.y * 40) + 40 +"px";
+}
+
+function moveGhosts(){
+    var posMoves1 = [];
+    var posMoves2 = [];
+    var posMoves3 = [];
+    if (ghost1.x!=0){
+        if (world[ghost1.y][ghost1.x-1]!=1){
+            posMoves1.push([ghost1.x-1, ghost1.y]);
+        }}
+    if (ghost1.x!=19){
+        if (world[ghost1.y][ghost1.x+1]!=1){
+            posMoves1.push([ghost1.x+1, ghost1.y]);
+    }}
+    if (ghost1.y!=19){
+        if (world[ghost1.y+1][ghost1.x]!=1){
+            posMoves1.push([ghost1.x, ghost1.y+1]);
+    }}
+    if (ghost1.y!=0){
+        if (world[ghost1.y-1][ghost1.x]!=1){
+            posMoves1.push([ghost1.x, ghost1.y-1]);
+    }}
+    if (ghost2.x!=0){
+        if (world[ghost2.y][ghost2.x-1]!=1){
+            posMoves2.push([ghost2.x-1, ghost2.y]);
+    }}
+    if (ghost2.x!=19){
+        if (world[ghost2.y][ghost2.x+1]!=1){
+            posMoves2.push([ghost2.x+1, ghost2.y]);
+    }}
+    if (ghost2.y!=19){
+        if (world[ghost2.y+1][ghost2.x]!=1){
+            posMoves2.push([ghost2.x, ghost2.y+1]);
+    }}
+    if (ghost2.y!=0){
+        if (world[ghost2.y-1][ghost2.x]!=1){
+            posMoves2.push([ghost2.x, ghost2.y-1]);
+    }}
+    if (ghost3.x!=0){
+        if(world[ghost3.y][ghost3.x-1]!=1){
+            posMoves3.push([ghost3.x-1, ghost3.y]);
+    }}
+    if (ghost3.x!=19){
+        if (world[ghost3.y][ghost3.x+1]!=1){
+            posMoves3.push([ghost3.x+1, ghost3.y]);
+    }}
+    if (ghost3.y!=19){
+        if (world[ghost3.y+1][ghost3.x]!=1){
+            posMoves3.push([ghost3.x, ghost3.y+1]);
+    }}
+    if (ghost3.y!=0){
+        if (world[ghost3.y-1][ghost3.x]!=1){
+            posMoves3.push([ghost3.x, ghost3.y-1]);
+    }}
+    var move1 = getRandom(posMoves1.length)-1;
+    var move2 = getRandom(posMoves2.length)-1;
+    var move3 = getRandom(posMoves3.length)-1;
+    ghost1.x = posMoves1[move1][0];
+    ghost1.y = posMoves1[move1][1];
+    if ((ghost1.x==ninjaman.x)&&(ghost1.y==ninjaman.y)){
+        lifesRemaining--; 
+        if (lifesRemaining==0) hasGameEnded = 1;
+        drawWorld();
+    }
+    ghost2.x = posMoves2[move2][0];
+    ghost2.y = posMoves2[move2][1];
+    if ((ghost2.x==ninjaman.x)&&(ghost2.y==ninjaman.y)){
+        lifesRemaining--; 
+        if (lifesRemaining==0) hasGameEnded = 1;
+        drawWorld();
+    }
+    ghost3.x = posMoves3[move3][0];
+    ghost3.y = posMoves3[move3][1];
+    if ((ghost3.x==ninjaman.x)&&(ghost3.y==ninjaman.y)){
+        lifesRemaining--; 
+        if (lifesRemaining==0) hasGameEnded = 1;
+        drawWorld();
+    }
+    drawGhosts();   
+}
+
+function drawGhosts(){
+    document.getElementById("ghost1").style.left = ghost1.x * 40 +"px";
+    document.getElementById("ghost1").style.top = (ghost1.y * 40) + 40 +"px";
+    document.getElementById("ghost2").style.left = ghost2.x * 40 +"px";
+    document.getElementById("ghost2").style.top = (ghost2.y * 40) + 40 +"px";
+    document.getElementById("ghost3").style.left = ghost3.x * 40 +"px";
+    document.getElementById("ghost3").style.top = (ghost3.y * 40) + 40 +"px";
+}
+
+//pressing buttons
+document.onkeydown = function(e) {
+    if ((e.keyCode == 13)&&(hasGameStarted==0)) {  //ENTER-START
+        createWorld();
+        document.getElementById("start").innerHTML = "EAT THE SUSHI, AVOID THE GHOSTS. GOOD LUCK!";
+        hasGameStarted++;
+        interval = setInterval(moveGhosts, 200);
+        lifesRemaining = 3;
+    }
+    if (e.keyCode == 37) { // LEFT
+        if ((ninjaman.x!=0)&&(hasGameEnded==0)) {
+            if (world[ninjaman.y][ninjaman.x-1]!=1){
+            ninjaman.x--;
+        }
+    }
+    }
+    else if (e.keyCode == 39) { // RIGHT
+        if ((ninjaman.x!=19)&&(hasGameEnded==0)){
+            if (world[ninjaman.y][ninjaman.x+1]!=1){
+        ninjaman.x++;
+        }
+    }
+    }
+    else if ((e.keyCode == 40)&&(hasGameEnded==0)) { // DOWN
+        if (ninjaman.y!=19){
+            if (world[ninjaman.y+1][ninjaman.x]!=1){
+        ninjaman.y++;
+        }
+        }    
+    }
+    else if ((e.keyCode == 38)&&(hasGameEnded==0)) { //UP
+        if (ninjaman.y!=0){
+            if (world[ninjaman.y-1][ninjaman.x]!=1){
+        ninjaman.y--;
+        }
+        }
+    }
+    if(world[ninjaman.y][ninjaman.x] == 2){
+        updateScore(10);
+    }
+    if(world[ninjaman.y][ninjaman.x] == 3){
+        updateScore(5);
+    }
+    world[ninjaman.y][ninjaman.x] = 0;
+    drawNinja();
+    drawWorld();    
+}
+</script>
+</html>
