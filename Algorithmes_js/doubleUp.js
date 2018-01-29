@@ -7,5 +7,6 @@ function DoubleUp(arr){
     } 
     return arr;
 }
-//example:
+//test:
 console.log(DoubleUp([1,7,20,5]))
+//result: [ 1, 1, 7, 7, 20, 20, 5, 5 ]

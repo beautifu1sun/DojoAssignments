@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    padding: 10px 0px 0px 10px;
+}
+h2{
+    margin: 10px 0px;
+}
+#square{
+    width: 140px;
+    height: 140px;
+    background: blue;
+}
+#circle{
+    width: 140px;
+    height: 140px;
+    background: blue;
+    border-radius: 50%;
+}
+#up_triangle{
+    width: 0px;
+    height: 0px;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 140px solid blue;
+}
+#pacman{
+    width: 0px;
+    height: 0px;
+    border-left: 70px solid blue;
+    border-right: 70px solid blue;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid blue;
+    transform: rotate(90deg);
+    border-radius: 50%;
+}
