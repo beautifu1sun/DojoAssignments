@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Functions</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".click").click(function(){
+				$(".click").css('background-color', 'red');
+				$(".click").html("&#x262D; &#x262D; &#x262D; &#x262D; &#x262D;");
+			});
+			$(".hide").click(function(){
+				$(".hide").hide();
+			});
+			$(".show").click(function(){
+				$(".hide").show();
+			});
+			$(".toggle").click(function(){
+				$("p").toggle();
+			});
+			$(".slideDown").click(function(){
+				$("h4").slideDown("slow");
+			});
+			$(".slideUp").click(function(){
+				$("h4").slideUp("slow");
+			});
+			$(".slideToggle").click(function(){
+				$("h4").slideToggle("slow");
+			});
+			$(".fadeIn").click(function(){
+				$("h5").fadeIn("fast");
+			});
+			$(".fadeOut").click(function(){
+				$("h5").fadeOut("fast");
+			});
+			$(".addClass").click(function(){
+				$("h2").addClass("opacity");
+			});
+			$(".before").click(function(){
+				$("h3").before("<h1>*</h1>");
+			});
+			$(".after").click(function(){
+				$("h3").after("<h1>*</h1>");
+			});
+			$(".append").click(function(){
+				$("p").append("*");
+			});
+			$(".html").click(function(){
+				$( "body" )
+				.html( "<p>You are done here! <em>See ya!</em></p>" );
+			});
+			$(".attr").click(function(){
+				$(".attr").attr("style", "font-size: 40px");
+			});
+			$(".val").click(function(){
+		   		var value = $(".val").text();
+		   		$("textarea").val(value);
+			});
+			$(".data").click(function(){
+				$("div").data("test", { first1: "January", last1: "Java"});
+				$("span:first").text($("div").data("test").first1);
+				$("span:last").text($("div").data("test").last1);
+			});
+		});
+	</script>
+	<style type="text/css">
+		.opacity{
+			opacity: 0.5;
+		}
+		button{
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h2>.click</h2>
+	<button type="button" class="click">Click me to make me weird!</button>
+	<hr>
+	<h2>.hide</h2>
+	<button type="button" class="hide">Click me to hide myself</button>
+	<hr>
+	<h2>.show</h2>
+	<button type="button" class="show">Click me to bring the previous button back</button>
+	<hr>
+	<h2>.toogle</h2>
+	<p>This is the paragraph that will be hidden</p>
+	<button type="button" class="toggle">Click me to hide and show the paragraph above</button>
+	<hr>
+	<h2>.slideDown / .slideUp / .slideToggle</h2>
+	<h4>This paragraph will slowly appear / disappear</h4>
+	<button type="button" class="slideUp">Click me to make the paragraph above slowly disappear</button>
+	<br>
+	<button type="button" class="slideDown">Click me to make the paragraph above slowly appear</button>
+	<br>
+	<button type="button" class="slideToggle">Click me to make the paragraph slowly disappear or appear</button>
+	<hr>
+	<h2>.fadeIn / .fadeOut</h2>
+	<h5>FADE IN >>> FADE OUT</h5>
+	<button type="button" class="fadeIn">Click me to make the paragraph quickly fade in</button>
+	<br>
+	<button type="button" class="fadeOut">Click me to make the paragraph quickly fade out</button>
+	<hr>
+	<h2>.addClass</h2>
+	<button type="button" class="addClass">Click me to add opacity to H2 elements</button>
+	<hr>
+	<h2>.before / .after</h2>
+	<h3>I wish I had a "*"</h3>
+	<button type="button" class="before">Click me to add a * before the paragraph</button>
+	<br>
+	<button type="button" class="after">Click me to add a * after the paragraph</button>
+	<hr>
+	<h2>.append</h2>
+	<p>Hello, </p>
+	<button type="button" class="append">Click me to add a * at the end of the paragraph</button>
+	<hr>
+	<h2>.html</h2>
+	<button type="button" class="html">Click me to remove the content of the page</button>
+	<hr>
+	<h2>.attr</h2>
+	<button type="button" class="attr">Click me to make me HUGE</button>
+	<hr>
+	<h2>.val / .text</h2>
+	<textarea class=".value"></textarea>
+	<button type="button" class="val">Click me to add the value to the text area</button>
+	<hr>
+	<h2>.data</h2>
+	<div>Values are <span></span> and <span></span>.</div>
+	<button type="button" class="data">Click me to add data (values) to the div (parahraph) above</button>
+</body>
+</html>
