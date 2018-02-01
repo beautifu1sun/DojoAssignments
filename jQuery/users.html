@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form').submit(function(event){
+                event.preventDefault();
+                var x = document.getElementById("newUsers");
+                var text = "<tr>";
+                for (var i = 0; i < x.length - 1; i++) {
+                    text += "<td>" + x.elements[i].value + "</td>";
+                }
+                text += "</tr>";
+                $('#data tbody').append(text);
+            });
+        });
+    </script>
+    <style>
+        h1:after {
+            content: ""; 
+            display: block;
+            width: 20%;
+            border-bottom: 2px solid gray;
+        }
+        form{
+            width: 300px;
+            text-align: right;
+            padding-left: 40px
+        }
+        form table{
+            border-spacing: 0px 5px;
+        }
+        .submit_button{
+            margin: 10px 52px 0px 0px;
+            text-align: right;
+        }
+        #data{
+            border: 1px solid black;
+        }
+        #data thead tr th, #data tbody tr td{
+            padding-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <table id="data">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Contact #</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h1>Add User</h1>
+    <form id="newUsers" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="first_name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="last_name"></td>    
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Contact No.:</td>
+                    <td><input type="text" name="contact"></td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="submit_button" type="submit" value="Add user">
+    </form>
+</body>
+</html>
