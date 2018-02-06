@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2942</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+	<style type="text/css">
+	#space{
+		background-image: url(img/background.jpg);
+		width: 1000px;
+		height: 800px;
+	}
+	#start{
+		font-size: 50px;
+		position: absolute;
+		top: 350px;
+		left: 90px;
+		color: white;
+	}
+	#score{
+		width: 1000px;
+		height: 30px;
+		background-color: black;
+		color: white;
+		text-align: center;
+		font-size: 27px;
+		line-height: 30px;
+	}
+	#armory{
+		position: relative;
+		top: -30px;
+		left: 840px;
+		width: 150px;
+	}
+	.armor{
+		width: 28px;
+		height: 28px;
+		background-image: url(img/armor.png);
+		display: inline-block;
+		margin: 1px;
+	}
+	.enemy2{
+		background-image: url(img/enemy.png);
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	.enemy1{
+		background-image: url(img/boss.png);
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	.player{
+		background-image: url(img/player.png);
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	.missile {
+		background-color: green;
+		position: absolute;
+		width: 2px;
+		height: 10px;
+	}
+	.enemyfire {
+		background-color: red;
+		position: absolute;
+		width: 3px;
+		height: 8px;
+	}
+	</style>
+
+	<div id = 'space'>
+		<div id = 'start'>PRESS ENTER TO START THE GAME</div>
+	</div>
+	<div id = 'score'>
+		SCORE:
+	</div>
+	<div id = 'armory'>
+	</div>
+	
+	<!-- 
+	MISSILES COLLISION + BANG (ENIMIES - ARMOR, YOU - 500POINTS. YOU - ARMOR )
+	SHIP COLLISION + BANG - INSTANT DEATH
+	TIMER
+	END DIALOGUE -->
+
+	<script type="text/javascript">
+	var player = {
+		left: 450,
+		top: 700,
+		armor: 5
+	}
+	var enemies = [
+		{left: 200, top: 0, dir:1, type:2, armor: 3},
+		{left: 300, top: 0, dir:1, type:2, armor: 3},
+		{left: 400, top: 0, dir:1, type:2, armor: 3},
+		{left: 500, top: 0, dir:1, type:2, armor: 3},
+		{left: 600, top: 0, dir:1, type:2, armor: 3}
+	]
+	var enemyFire = [];
+	var missiles = [];
+	var gameInt = 30;
+
+
+	function getRandom(num){
+        return Math.floor(Math.random() * Math.floor(num)) + 1;
+	}
+
+	function drawPlayer() {
+		var content = "<div class = 'player' style = 'left: " + player.left + "px; top: " + player.top + "px'></div>";
+		document.getElementById('players').innerHTML = content
+	}
+	
+	function drawEnemies() {
+		var content = "";
+		for (var i = 0; i < enemies.length; i++){
+			if (enemies[i].type != 0){
+			content += "<div class = 'enemy" + enemies[i].type + "' style = 'left: " + enemies[i].left + "px; top: " + enemies[i].top + "px'></div>";}
+		}
+		document.getElementById("enemies").innerHTML = content;
+	}
+
+	function drawMissiles(){
+		var content = "";
+		for (var i = 0; i < missiles.length; i++){
+			content += "<div class = 'missile' style = 'left: " + missiles[i].left + "px; top: " + missiles[i].top + "px'></div>";
+		}
+		document.getElementById("missiles").innerHTML = content;
+	}
+
+	function drawEnemyFire(){
+		var content = "";
+		for (var i = 0; i < enemyFire.length; i++){
+			content += "<div class = 'enemyfire' style = 'left: " + enemyFire[i].left + "px; top: " + enemyFire[i].top + "px'></div>";
+		}
+		document.getElementById("enemyfire").innerHTML = content;
+	}
+
+	function moveEnemies(){
+		for (var i = 0; i < enemies.length; i++){
+			if (enemies[i].top<710){
+			enemies[i].top+=1;
+			//shoot
+			if (enemies[i].type==2){
+				//number of missiles (and armor) increases over time
+				if (getRandom(200-enemies[i].armor*5) == 9){
+					enemyFire.push({left: (enemies[i].left + 49), top: (enemies[i].top+70)})
+					drawEnemyFire();
+					}
+				}
+			else if (enemies[i].type==1){
+				if (getRandom(175-enemies[i].armor*5) == 9){
+				enemyFire.push({left: (enemies[i].left + 49), top: (enemies[i].top+70)})
+				enemyFire.push({left: (enemies[i].left + 9), top: (enemies[i].top+70)})
+				enemyFire.push({left: (enemies[i].left + 91), top: (enemies[i].top+70)})
+				drawEnemyFire();
+				}
+			}}
+			else {
+				console.log("WHAT");
+				enemies.slice(1);
+			}
+		}	
+		drawEnemies()
+			//moving enemies left-right
+			if (enemies.length>0){
+			if (enemies[0].dir==1){ //moving left
+				if (enemies[0].left>10){
+					for (var i = 0; i < enemies.length; i++){
+						enemies[i].left-=2;
+				}}
+				else { enemies[0].dir=2; enemies[enemies.length-1].dir=2; }
+			} else if (enemies[enemies.length-1].dir==2){ //moving right
+				if (enemies[enemies.length-1].left<910){
+					for (var i = 0; i < enemies.length; i++){
+						enemies[i].left+=2;
+				}}
+				else { enemies[0].dir=1; enemies[enemies.length-1].dir=1; }
+				}
+				drawEnemies();
+			} //if no enemies - create new ones
+			else{ createMoreEnemies(getRandom(2), getRandom(7)); }
+	}
+
+	function createMoreEnemies(type, num){
+		//boss
+		if (type == 1){
+			//armor increases over time
+			enemies.push({left: getRandom(800)+10, top: 0, dir:getRandom(2), type:1, armor: ((33-gameInt)*5)})
+		} else //fleet 
+		{
+			var leftRan = getRandom(900-(num*100))+10;
+			var dirRan = getRandom(2);
+			for (var i = 0; i < num; i++){
+				//armor increases over time
+				enemies.push({left: leftRan, top: getRandom(50), dir: dirRan, type:2, armor: (33 - gameInt)})
+				leftRan+=100;	
+			}
+		}
+		gameInt--;
+		drawEnemies();
+	}
+
+	function moveMissiles(){
+		for (var i = 0; i < missiles.length; i++){
+			missiles[i].top-=17;
+			for (var k = 0; k < enemies.length; k++){
+				if ((missiles[i].top<enemies[k].top+70)&&(missiles[i].top>enemies[k].top)){
+					if ((missiles[i].left > enemies[k].left + 5)&&(missiles[i].left < enemies[k].left+95)){
+						missiles[i].top=-10;
+						enemies[k].armor--;
+						if (enemies[k].armor<0){
+							enemies[k].type=0;
+							drawEnemies();
+						}
+					}
+				}
+			}
+			
+		}
+		
+		drawMissiles();
+	}
+
+	function moveEnemyFire(){
+		for (var i = 0; i < enemyFire.length; i++){
+			if (enemyFire[i].top<786){
+			enemyFire[i].top+=14;
+		} else enemyFire = enemyFire.slice(1);}
+		drawEnemyFire();
+	}
+
+	document.onkeydown = function(e){
+		if (e.keyCode == 13){
+			arStr = "";
+			for (var i = 0; i < player.armor; i++){
+			arStr+= "<div class = 'armor'></div>";
+			}
+			document.getElementById("space").innerHTML = "<div id = 'players'></div><div id = 'enemies'></div><div id = 'missiles'></div><div id = 'enemyfire'></div>";
+			document.getElementById("armory").innerHTML = arStr;
+			drawPlayer();
+			gameLoop();
+		}
+		if (e.keyCode == 37){ //left
+		    if (player.left > 10){
+		    player.left -= 10;
+			}
+		}
+		if (e.keyCode == 39){ //right
+			if (player.left < 910){
+			player.left += 10;
+			}
+		}
+		if (e.keyCode == 38){ //up
+			if (player.top > 500){
+			player.top -= 10;
+			}
+		}
+		if (e.keyCode == 40){ // down
+		    if (player.top < 700){
+			player.top += 10;
+			}
+		}
+		if (e.keyCode == 32){ //shoot
+            missiles.push({left: (player.left + 49), top: (player.top-5)})
+			drawMissiles();
+		}
+		drawPlayer();
+	}
+
+	function gameLoop(){
+        moveEnemies();
+		moveMissiles();
+		moveEnemyFire();
+		setTimeout(gameLoop, gameInt);
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    padding: 10px;
+}
+#submitButton{
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+    font-weight: bold;
+}
+#cityInput{
+    height: 25px;
+    border-radius: 5px;
+    border: 4px inset #7FBDFD;
+    font-weight: bold;
+}
+h1{
+    margin: 20px 0px;
+    font-size: 50px;
+}
+h3{
+    font-size: 30px;
+}

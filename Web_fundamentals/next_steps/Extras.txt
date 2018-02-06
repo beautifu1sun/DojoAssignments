@@ -1,0 +1,8 @@
+
+    coderbyte.com - Coderbyte is a great resource for algorithm challenges for developers old and new.
+    projecteuler.net - A massive list of challenging mathematical/programming questions.
+    regexone.com - Your one-stop shop for learning and practicing regular expressions.
+    spoj.com - A large collection of challenging algorithms.
+    The Importance of Algorithms - An excellent breakdown of why algorithms are important.
+    codechef.com- A great resource for beginners.
+    http://www.reddit.com/r/dailyprogrammer- A daily programming challenge subreddit that has a strong community and tons of questions!
