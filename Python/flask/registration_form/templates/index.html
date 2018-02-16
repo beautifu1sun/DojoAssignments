@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+            {% if errors %}
+                {% for message in errors %}
+                    <p style="color:red">Error: {{message}}</p>
+                {% endfor %}
+                <p style="color:red">Please, correct the information</p>
+            {% endif %}
+        {% endwith %}
+        {% with messages = get_flashed_messages(category_filter=["message"]) %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color:green"> {{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/process" method="post">
+            Email: <input type="text" name="email" style="display: block">
+            First Name: <input type="text" name="first_name" style="display: block">
+            Last Name: <input type="text" name="last_name" style="display: block">
+            Password: <input type="password" name="password" style="display: block">
+            Confirm password: <input type="password" name="pass_confirm" style="display: block">
+            Birthday <input type="date" name="DOB" style="display: block">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+</body>
+</html>

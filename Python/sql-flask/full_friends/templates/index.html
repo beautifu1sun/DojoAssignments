@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myFriends</title>
+    <style>
+    *{
+        padding: 7px;
+        margin: 7px;
+    }
+    table{
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    table td, table th {
+      border: 2px solid black;
+    }
+    table tr:first-child th {
+      border-top: 0;
+    }
+    table tr:last-child td {
+      border-bottom: 0;
+    }
+    table tr td:first-child,
+    table tr th:first-child {
+      border-left: 0;
+    }
+    table tr td:last-child,
+    table tr th:last-child {
+      border-right: 0;
+    }
+    </style>
+</head>
+<body>
+    <h1>Friends:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Friend Since</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for friend in friends: %}
+                <tr>
+                    <td>{{ friend['name'] }}</td>
+                    <td>{{ friend['age'] }}</td>
+                    <td>{{ friend['created_at'].strftime('%b %d') + friend['suffix'] }}</td>
+                    <td>{{ friend['created_at'].strftime('%Y') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/addFriend" method="POST">
+    <h2>Add Friend:</h2>
+        <label for="name">Name: <input type="text" name="name"></label> 
+        <br>
+        <label for="age">Age: <input type="text" name="age"></label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

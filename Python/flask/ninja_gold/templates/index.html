@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    #wrapper{
+        width: 970px;
+        padding: 5px;
+    }
+    form{
+        display: inline-block;
+        width: 200px;
+        height: 180px;
+        margin: 10px;
+        text-align: center;
+        padding: 10px 0px;
+        border: 3px solid black;
+        background-color: black;
+        color: white;
+    }
+    #log{
+        margin: 10px;
+        padding: 5px 15px;
+        width: 865px;
+        height: 230px;
+        overflow-y: scroll;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        
+        <h4>Your Gold: {{ session['gold'] }}</h2>
+        <form action="/process_money" method="post">
+            <h3>Farm</h3>
+            <br>
+            <p>(earns 10-20 gold)</p>
+            <br>
+            <input type="hidden" name="place" value="farm">
+            <input type="submit" value="Find Gold!">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>Cave</h3>
+            <br>
+            <p>(earns 5-10 gold)</p>
+            <br>
+            <input type="hidden" name="place" value="cave">
+            <input type="submit" value="Find Gold!">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>House</h3>
+            <br>
+            <p>(earns 2-5 gold)</p>
+            <br>
+            <input type="hidden" name="place" value="house">
+            <input type="submit" value="Find Gold!">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>Casino</h3>
+            <br>
+            <p>(earns/looses 0-50 gold)</p>
+            <br>
+            <input type="hidden" name="place" value="casino">
+            <input type="submit" value="Find Gold!">
+        </form>
+        <h4>Activities:</h4>
+        <div id="log">
+            <!-- the log is stored here -->
+        </div>
+
+        {% for each in session['log'] %}
+            <script>
+                var p = document.createElement("p");
+                p.style.cssText = 'color: {{each.color}}'
+                var newLog = document.createTextNode("{{ each.text }}");
+                p.appendChild(newLog);
+                var list = document.getElementById("log");
+                list.insertBefore(p, list.childNodes[0]);
+            </script>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

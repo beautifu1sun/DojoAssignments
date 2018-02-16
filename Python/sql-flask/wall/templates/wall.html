@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wall</title>
+    <style>
+    *{
+        margin: 0
+    }
+    #header{
+        position: relative;
+        height: 50px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        padding: 0px;
+        text-align: right
+    }
+    .newcomment{
+        margin-left: 30px
+    }
+    .comment{
+        margin-left: 25px;
+        font-size: 15px;
+    }
+    </style>
+</head>
+<body>
+    <div id="header">
+        {% if session.activeUser %}
+        <p style="display:inline-block; padding: 10px 10px">Welcome {{ session.userName[0]['name']}} </p>
+        <form action="/logout" method="POST" style="display:inline-block; padding: 10px 10px">
+        <input type="submit" value="log off">
+        </form>
+        {% endif %}
+    </div>
+    <form action="/newMessage" method="POST">
+        <h3 style="text-align: left">Post a message</h3>
+        <textarea name="newMessage" cols="230" rows="4"></textarea>
+        <input type="submit" value="Post a message" style="text-align: right">
+    </form>
+    <!-- MESSAGES -->
+    {% for message in messages: %}
+    <div class = "post">
+        <h4>{{ message['first_name'] + " " + message['last_name'] + " - " + message['created_at'].strftime('%B %d') + message['suffix'] + message['created_at'].strftime(' %Y') }}</h4>
+        <p>{{ message['message'] }}</p>
+        {% if message['comments'] %}
+            {% for comment in message['comments'] %}
+                <div class="comment">
+                    <h5>{{ comment['first_name'] + " " + comment['last_name'] + " - " + comment['created_at'].strftime('%B %d') + comment['suffix'] + comment['created_at'].strftime(' %Y') }}</h5>
+                    <p>{{ comment['comment'] }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h5 class="newcomment">Post a comment</h5>
+        <form action="/newComment" class="newcomment" method="POST">
+        <textarea name="newComment" cols="210" rows="2"></textarea>
+        <input type="hidden" name="post_id" value="{{ message['id'] }}">
+        <input type="submit" value="Post a comment" style="text-align: right">
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

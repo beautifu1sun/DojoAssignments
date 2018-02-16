@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page</title>
+    <style>
+    *{
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+    }
+    #success{
+        padding: 0px;
+        position: relative;
+        left: 35%;
+        width: 30%;
+        font-size: 20px;
+        line-height: 30px;
+        background-color: green;
+        color: white;
+        box-shadow: 5px 5px 5px gray;
+    }
+    h3{
+        padding: 10px;
+    }
+    h2{
+        padding: 0px;
+        text-decoration: underline;
+    }
+    table{
+        padding: 0px;
+        position: relative;
+        left: 40%;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div id="success">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h3>The email address you entered {{ message }} is a VALID email address! Thank you!</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <h2>Email Addresses Entered:</h2>
+    <table>
+        <tbody>
+            {% for email in emails%}
+                <tr>
+                    <td>{{ email['address'] }}</td>
+                    <td>{{ email['created_at'].strftime('%m/%d/%y %I:%M%p') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Go Back</a>
+</body>
+</html>
