@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/show_style.css' %}">
+    <title>Show</title>
+</head>
+<body>
+    {% if user %}
+    <h1>User {{ user.id }}</h1>
+    <br>
+    <p><span style="font-weight: bold">Full Name:</span>&nbsp;{{ user.first_name }}&nbsp;{{ user.last_name }}</p>
+    <p><span style="font-weight: bold">Email:</span>&nbsp;{{ user.email }}</p>
+    <p><span style="font-weight: bold">Created At:</span>&nbsp;{{ user.created_at }}</p>
+    <br>
+    <a href="{{ user.id }}/edit">Edit</a>&nbsp;|&nbsp;<a href="{{ user.id }}/destroy">Delete</a>
+    {% endif %}
+</body>
+</html>

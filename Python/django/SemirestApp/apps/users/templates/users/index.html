@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/users_style.css' %}">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    {% if users %}
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td><a href="{{ user.id }}">{{ user.first_name }}&nbsp;{{ user.last_name }}</a></td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.created_at }}</td>
+                <td><a href="{{ user.id }}">Show</a>&nbsp;<a href="{{ user.id }}/edit">Edit</a>&nbsp;<a href="{{ user.id }}/destroy">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <br>
+    <a href="/users/new">Add a new user</a>
+</body>
+</html>

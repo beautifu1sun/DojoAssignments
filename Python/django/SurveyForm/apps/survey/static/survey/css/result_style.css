@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#thanks{
+    margin-top: 20px;
+    background-color: palegreen;
+    position: relative;
+    left: 35%;
+    width: 30%;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 28px;
+}
+#info{
+    margin-top: 20px;
+    position: relative;
+    left: 35%;
+    width: 26%;
+    border: 2px solid black;
+    font-size: 20px;
+    padding: 2%;
+}
+#info table{
+    margin: 15px 0px;
+}

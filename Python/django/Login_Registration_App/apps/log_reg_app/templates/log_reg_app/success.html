@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'log_reg_app/css/success_style.css' %}">
+    <title>Success</title>
+</head>
+<body>
+    {% for message in messages %}
+        {% if 'name' in message.tags %}
+            <h1>Success! Welcome, {{ message }}!</h1>
+        {% elif 'text' in message.tags %}
+            <h3 class="green">{{ message }}</h3>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

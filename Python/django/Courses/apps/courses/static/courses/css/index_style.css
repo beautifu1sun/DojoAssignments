@@ -1,0 +1,10 @@
+*{
+    padding: 5px;
+    margin: 5px;
+}
+.errors{
+    color: red;
+}
+table{
+    border: 2px solid black;
+}

@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+p{
+    display: inline;
+}
+#left{
+    position: absolute;
+    width: 45%;
+    margin: 2%;
+    height: 100%;
+    vertical-align: top;
+}
+#right{
+    position: absolute;
+    width: 45%;
+    left: 50%;
+    margin: 2%;
+    height: 100%;
+    vertical-align: top;
+}
