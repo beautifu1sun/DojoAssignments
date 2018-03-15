@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>The great button game</title>
+    <style>
+    *{
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+    }
+    #button_count{
+        background-color: blue;
+        color: white;
+        font-size: 30px;
+    }
+    #button_reset{
+        background-color: red;
+        color: white;
+        font-size: 20px;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        var socket = io.connect();
+        $('#button_count').click(function(){
+            socket.emit('count_pressed');
+        });
+        $('#button_reset').click(function(){
+            socket.emit('reset_pressed');
+        });
+        socket.on('updated_count', function(count){
+            document.getElementById('count').innerHTML = count;
+        });
+    });
+    </script>
+</head>
+<body>
+    <h2>The button has been pushed<span id="count"><%= counter %></span>time(s)</h2>
+    <p>Push the button to update the count!</p>
+    <button id="button_count">Push the epic button</button>
+    <br>
+    <button id="button_reset">Reset count</button>
+</body>
+</html>

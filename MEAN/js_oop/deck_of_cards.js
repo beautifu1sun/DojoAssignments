@@ -170,7 +170,7 @@ function hit(){
     result += " --- Score: " + player.score
     console.log(result)
     if (player.score > 21){
-            prompts.question(">> Burst! Would you like to start the new game? [Y/N]\n", function (answer) {
+            prompts.question(">> Bust! Would you like to start the new game? [Y/N]\n", function (answer) {
                 if (answer == "N"){
                     console.log(">> Bye!")
                     process.exit();

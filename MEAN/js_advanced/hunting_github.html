@@ -10,18 +10,43 @@
 <body>
     <button id="getName">Get Name from API</button>
     <h1 id="name"></h1>
-
     <script>
     var button = document.getElementById("getName")
-     
-    function getName(){
-        var data = $.get("https://api.github.com/users/beautifu1sun", displayName)
-    }
-    function displayName(data){
-        document.getElementById("name").innerHTML = data.name;
-    }
-    button.addEventListener("click", getName) 
-    </script>
+    button.addEventListener("click", getNamePromise) 
 
+    const promiseTimeout = function(ms, promise){
+            // Create a promise that rejects in <ms> milliseconds
+            let timeout = new Promise((resolve, reject) => {
+                let id = setTimeout(() => {
+                clearTimeout(id);
+                reject('Timed out in '+ ms + ' ms. No data returned.')
+                }, ms)
+            })
+            // Returns a race between our timeout and the passed in promise
+            return Promise.race([
+                promise,
+                timeout
+            ])
+        }
+    function getNamePromise(){
+        var data = new Promise(function(resolve,reject){
+            apiCall(resolve, reject);
+        })
+        var timeout = promiseTimeout(10,data)
+        timeout.then(function(data){
+            document.getElementById("name").innerHTML = data.name
+        })
+        timeout.catch(function(reject){
+            if (reject == "ReferenceError: $ is not defined"){
+                reject = "Unable to establish internet connection."
+            }
+            document.getElementById("name").innerHTML = reject
+        })
+    } 
+    function apiCall(resolve,reject){
+        var data = $.get("https://api.github.com/users/beautifu1sun");
+        resolve(data);
+	}
+    </script>
 </body>
 </html>

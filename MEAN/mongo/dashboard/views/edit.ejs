@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit the cat's info</title>
+    <style>
+    *{
+        margin: 5px;
+        padding:5px;
+    }
+    </style>
+</head>
+<body>
+    <form action="/cats/edit/<%= cat.id %>" method="post">
+        <label for="name">Cat's name: <input type="text" name="name" id="name" value="<%= cat.name %>"></label>
+        <br>
+        <label for="breed">Cat's breed: <input type="text" name="breed" id="breed" value="<%= cat.breed %>"></label>
+        <br>
+        <label for="age">Cat's age: <input type="text" name="age" id="age" value="<%= cat.age %>"></label>
+        <br>
+        <label for="lifestyle">Lifestyle: <select name="lifestyle" id="lifestyle">
+            <option value="<%= cat.lifestyle %>" selected hidden><%= cat.lifestyle %></option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Indoor">Indoor</option>
+        </select></label>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Go Back</a>
+</body>
+</html>

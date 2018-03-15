@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Game</title>
+    <style>
+    *{
+        text-align: center
+    }
+    .result{
+        height: 200px;
+        width: 300px;
+        background-color: red;
+        color: white;
+        font-size: 30px;
+        margin: 50px auto;
+        padding-top: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <h3>I'm thinking of a number between 1 to 100</h3>
+    <h3>Take a guess!</h3>
+    <form action="/guess" method="post">
+        <input type="text" name="guess">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <% if (result){ %>
+        <% if ((typeof result == "string")&&(result == "high")){ %>
+        <div class=result>
+            Too high!
+        </div>
+        <% } %>
+        <% if ((typeof result == "string")&&(result == "low")){ %>
+        <div class=result>
+            Too low!
+        </div>
+        <% } %>
+        <% if (typeof result == "number") { %>
+        <div class=result style="background-color: green">
+            <p><%= result %> was the number!</p>
+        </div>
+        <form action="/again">
+        <input type="submit" value="Play Again">
+        </form>
+        <% } %>
+    <% } %>
+</body>
+</html>

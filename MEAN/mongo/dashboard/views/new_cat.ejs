@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a cat</title>
+    <style>
+    *{
+        margin: 5px;
+        padding:5px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Add a new cat</h1>
+    <form action="/cats/new" method="post">
+    <label for="name">Cat's name: <input type="text" name="name" id="name"></label>
+    <br>
+    <label for="breed">Cat's breed: <input type="text" name="breed" id="breed"></label>
+    <br>
+    <label for="age">Cat's age: <input type="text" name="age" id="age"></label>
+    <br>
+    <label for="lifestyle">Lifestyle: <select name="lifestyle" id="lifestyle">
+        <option value="Outdoor">Outdoor</option>
+        <option value="Indoor">Indoor</option>
+    </select></label>
+    <br>
+    <input type="submit" value="Add">
+    </form>
+    <a href="/">Go Back</a>
+</body>
+</html>

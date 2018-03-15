@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Group Chat</title>
+    <style>
+        *{
+            padding: 2px;
+            margin: 5px;
+        }
+        h2{
+            text-decoration: underline;
+        }
+        #chat{
+            border: 2px solid black;
+            color: blue;
+            height: 700px;
+            width: 70%;
+            font-size: 20px;
+            font-style: italic;
+            padding: 10px;
+        }
+        #message{
+            position: relative;
+            width: 69%;
+        }
+        #submit{
+            font-size: 15px;
+        }
+        #new_message, #chat{
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var socket = io.connect();
+            var name;
+            while (!name){
+                name = prompt("Please enter your name");
+            }
+            $('#chat').show();
+            $('#new_message').show();
+
+            var chat = document.getElementById("chat");
+            chat.scrollTop = chat.scrollHeight;
+
+            $('#submit').click(function(event){
+                event.preventDefault();
+                socket.emit('new_message', name + ": " + $('#new_message')[0][0].value);
+                $('#message').val("");
+            });
+
+            socket.on('messages_updated', function(message){
+                var newElement = document.createElement("p");
+                newElement.innerHTML = message;
+                chat.appendChild(newElement);
+                newElement.scrollIntoView();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Conversation Board</h2>
+    <div id="chat" style="overflow:auto">
+        <% for (each in msgs) { %>
+            <p><%= msgs[each] %></p>
+        <% } %>
+    </div>
+    <form id="new_message">
+        <label for="message"><input type="text" name="message" id="message" placeholder="enter your message here"></label>
+        <br>
+        <input type="submit" value="Send" id="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QuotingDojo</title>
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+    <% for (each in quotes){ %>
+        <p><i><%= quotes[each].quote %></i></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<%= quotes[each].name %>&nbsp;at&nbsp;<%= moment(quotes[each].createdAt).format("h:mm a, MMMM Do YYYY") %></p>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Web Page</title>
+    <style>
+        .message{
+            margin-left: 10px;
+        }
+        .comment, .new_comment{
+            margin-left: 30px;
+            padding-bottom: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Dojo Message Board</h1>
+    <hr>
+    <form action="/postMessage" method="post">
+        <label for="name">Name: (at least 4 characters long) 
+        <br><input type="text" name="name" id="name"></label>
+        <br><label for="mes">Message:
+        <br><textarea name="mes" id="mes" cols="60" rows="3"></textarea></label>
+        <br>
+        <input type="submit" value="Post Message">
+    </form>
+    <% for (each in messages){ %>
+        <div class="message">
+            <h3>Name: <%= messages[each].name %></h3>
+            <h3>Message: <%= messages[each].text %></h3>
+        </div>
+        <% if (messages[each].comments.length > 0){ %>
+            <% for (var i = 0; i < messages[each].comments.length; i++){ %>
+            <div class="comment">
+                <p>Name: <%= messages[each].comments[i].name %></p>
+                <p>Comment: <%= messages[each].comments[i].text %></p>
+            </div>
+            <% } %>
+        <% } %>
+        <form action="/postComment/<%= messages[each].id %>" method="post" class="new_comment">
+            <label for="name">Name: (at least 4 characters long) 
+            <br><input type="text" name="name" id="name"></label>
+            <br><label for="com">Comment:
+            <br><textarea name="com" id="com" cols="40" rows="1"></textarea></label>
+            <br>
+            <input type="submit" value="Post Comment">
+        </form>
+    <% } %>
+</body>
+</html>

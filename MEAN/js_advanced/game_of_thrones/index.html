@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Game of Thrones</title>
+    <script>
+        $(document).ready(function(){
+        var stark = document.getElementById("362")
+        var targaryen = document.getElementById("378")
+        var lannister = document.getElementById("229")
+        var baratheon = document.getElementById("15")
+        stark.addEventListener("click", function(){
+            var data = $.get("https://anapioficeandfire.com/api/houses/362", displayInfo)
+        })
+        targaryen.addEventListener("click", function(){
+            var data = $.get("https://anapioficeandfire.com/api/houses/378", displayInfo)
+        })
+        lannister.addEventListener("click", function(){
+            var data = $.get("https://anapioficeandfire.com/api/houses/229", displayInfo)
+        })
+        baratheon.addEventListener("click", function(){
+            var data = $.get("https://anapioficeandfire.com/api/houses/15", displayInfo)
+        })
+        function displayInfo(data){
+            var text = "<p>Name: " + data.name + "</p>";
+            words = data.words;
+            if (words.length == 0){
+                //baratheon doesn't have any words in the db
+                words = "Ours is The Fury";
+            }
+            text += "<p>Words: " + words + "</p>";
+            text += "<p>Titles: ";
+            text += data.titles[0];
+            for (var i = 0; i < data.titles.length; i++){
+                text += ", " + data.titles[i];
+            }
+            text += "</p>";
+            document.getElementById("info").innerHTML = text;
+        }   
+    })
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="selection">
+            <img src="img/stark.jpg" alt="House Stark" id="362">
+            <img src="img/targaryen.jpg" alt="House Targaryen" id="378">
+            <img src="img/lannister.jpg" alt="House Lannister" id="229">
+            <img src="img/baratheon.png" alt="House Baratheon" id="15">
+        </div>
+        <fieldset style="border: 4px rgb(255, 255, 255) solid">
+            <legend style="padding: 0.2em 0.3em "><h2>House Details</h2></legend>
+            <div id="info"></div>
+        </fieldset> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <style>
+        *{
+            margin: 5px;
+            padding: 5px;
+        }
+        form, #result{
+            text-align: center;
+        }
+    </style>
+    <script>
+    $(document).ready(function (){
+            var socket  = io.connect();
+            $('#submit').click(function(event){
+                event.preventDefault();
+                var data = {}
+                for (var i = 0; i < $('#survey')[0].length-1; i++){
+                    data[$('#survey')[0][i].name]=$('#survey')[0][i].value
+                }
+                socket.emit('posting_form', data);
+            });
+            socket.on('updated_message', function(message){
+                document.getElementById('result').innerHTML = "<p>" + message + "</p>";
+            });
+            socket.on('random_number', function(num){
+                document.getElementById('result').innerHTML += "<p>" + num + "</p>" ;
+            });
+    });
+    </script>
+    <title>Survey</title>
+</head>
+<body>
+    <div id="result"></div>
+    <form id="survey">
+        <label for="name">Your Name: <input type="text" name="name" id="name"></label>
+        <br>
+        <label for="location">Dojo Location: <select name="location" id="location">
+            <option value="Seattle">Seattle</option>
+            <option value="LA">LA</option>
+            <option value="New York">New York</option>
+        </select></label>
+        <br>
+        <label for="language">Favorite Language: <select name="language" id="language">
+            <option value="C">C</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+        </select></label>
+        <br>
+        <label for="comment">Comment (optional): <textarea name="comment" id="comment" cols="30" rows="10"></textarea></label>
+        <br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</body>
+</html>

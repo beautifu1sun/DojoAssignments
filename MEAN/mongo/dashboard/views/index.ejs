@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <style>
+    *{
+        padding: 0px 5px;
+        margin: 1px;
+    }
+    h1{
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <img src="https://static.vix.com/es/sites/default/files/g/gif_gato_escribiendo_rapido_en_la_computadora.gif" style="position: relative; height: 15%; width:15%">
+    <br>
+    <a href="cats/new">Add a new cat</a>
+    <h1>List of cats</h1>
+    <hr>
+    <% for (each in cats){ %>
+        <h3><%= cats[each].name %>:</h3>
+        <p><%= cats[each].lifestyle %> cat</p>
+        <p>Breed: <%= cats[each].breed %></p>
+        <p>Age: <%= cats[each].age %></p>
+        <a href="cats/edit/<%= cats[each].id %>">Edit</a><a href="cats/<%= cats[each].id %>">Show</a><a href="cats/destroy/<%= cats[each].id %>">Delete</a>
+        <hr>
+    <% } %>
+</body>
+</html>
