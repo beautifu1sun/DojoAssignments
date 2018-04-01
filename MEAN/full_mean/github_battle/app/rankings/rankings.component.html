@@ -1,0 +1,11 @@
+<div id="wrapper">
+  <div class="user" *ngFor="let user of users">
+    <div class="info">
+      <img src="{{ user.imageUrl }}" style="height: 150px; width: 150px">
+      <p>{{ user.name }}</p>
+    </div>
+    <div class="score">
+      <h2>Score: {{user.score}}</h2>
+    </div>
+  </div>
+</div>

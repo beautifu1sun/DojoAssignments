@@ -1,0 +1,27 @@
+<div id="wrapper">
+  <h1>Add Player</h1>
+  <form (submit)="createPlayer()">
+    <table>
+      <tr>
+        <td><label for="newPlayer.name">Player Name:</label></td>
+        <td><input type="text" [(ngModel)]="newPlayer.name" name="newPlayer.name" id="newPlayer.name" 
+          required 
+          minlength="2"  
+          #name="ngModel">
+        </td>
+      </tr>
+      <tr *ngIf="!name.valid">
+        <td></td>
+        <td><span>*Name must be at least 2 characters in length.</span></td>
+      </tr>
+      <tr>
+        <td><label for="newPlayer.position">Preferred Position:</label></td>
+        <td><input type="text" [(ngModel)]="newPlayer.position" name="newPlayer.position" id="newPlayer.position"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" id="submitButton" value="ADD" [disabled]="!name.valid"></td>
+      </tr>
+    </table>
+  </form>
+</div>

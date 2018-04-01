@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+<p>Provide a quote by {{ this.existingAuthor.name }}:</p>
+<span *ngIf="error">A quote must contain at least three characters!</span>
+<form (submit)="addQuote(this.existingAuthor._id)">
+  <label for="this.newQuote">Quote:</label>
+  <br>
+  <input type="text" [(ngModel)]="this.newQuote" name="this.newQuote" id="this.newQuote">
+  <br>
+  <button (click)="cancel(this.existingAuthor._id)">Cancel</button>
+  <input type="submit" value="Submit">
+</form>

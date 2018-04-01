@@ -1,0 +1,26 @@
+<div id="wrapper">
+  <div class="user1" *ngIf="!user1Ready">
+    <h1>Player 1</h1>
+    <label for="userName1">GitHub Username:<input type="text" [(ngModel)]="userName1" name="userName1" id="userName1"></label>
+    <p><span *ngIf="user1Error">GitHub username does not exist. Try again.</span></p>
+    <br>
+    <button (click)=getUser1()>Get User</button>
+  </div>
+  <div class="user1" *ngIf="user1Ready">
+    <img src="{{ this.user1.imageUrl }}" style="height: 200px; width: 200px">
+    <p>{{ this.user1.name }}</p>
+  </div>
+  <div class="user2" *ngIf="!user2Ready">
+    <h1>Player 2</h1>
+    <label for="userName2">GitHub Username:<input type="text" [(ngModel)]="userName2" name="userName2" id="userName2"></label>
+    <p><span *ngIf="user2Error">GitHub username does not exist. Try again.</span></p>
+    <br>
+    <button (click)=getUser2()>Get User</button>
+  </div>
+  <div class="user2" *ngIf="user2Ready">
+    <img src="{{ this.user2.imageUrl }}" style="height: 200px; width: 200px">
+    <p>{{ this.user2.name }}</p>
+  </div>
+  <br>
+  <button id="battleButton" *ngIf="user1Ready && user2Ready" (click)="battle()">BATTLE!</button>
+</div>

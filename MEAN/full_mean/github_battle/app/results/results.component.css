@@ -1,0 +1,19 @@
+#info{
+    display: inline-block;
+    margin-right: 15%;
+    vertical-align: top;
+}
+#user{
+    display: inline-block;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px 20px;
+}
+#wrapper{
+    padding: 1%;
+}
+button{
+    color: white;
+    background-color: black;
+    padding: 3px 20px;
+}

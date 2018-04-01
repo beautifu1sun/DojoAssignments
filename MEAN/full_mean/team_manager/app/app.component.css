@@ -1,0 +1,12 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#wrapper{
+    padding: 20px;
+    margin: 0px;  
+    height: 910px;  
+}
+a{
+    font-size: 30px;
+}

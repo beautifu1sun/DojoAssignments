@@ -1,0 +1,14 @@
+<div id="wrapper">
+  <div id="info">
+    <h1 style="color: green">1st Place</h1>
+    <p style="color: green">{{ winner.name }} (Score: {{ winner.score }})</p>
+    <h1 style="color: red">2nd Place</h1>
+    <p style="color: red">{{ loser.name }} (Score: {{ loser.score }})</p>
+  </div>
+  <div id="user">
+    <img src="{{ winner.imageUrl }}"  style="height: 200px; width: 200px">
+    <p>{{ winner.name }}</p>
+  </div>
+  <br>
+  <button (click)="reset()">Reset</button>
+</div>

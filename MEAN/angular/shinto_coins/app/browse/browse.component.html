@@ -1,0 +1,20 @@
+<h1>Browse the Ledger</h1>
+<p>Here you can browse all ShitoCoin transactions.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Amount</th>
+      <th>Value</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of transactions">
+      <td>{{ data.action }}</td>
+      <td>{{ data.amount }}</td>
+      <td>{{ data.value }}</td>
+      <td><button (click)="seeDetails(data.id)">Details</button></td>
+    </tr>
+  </tbody>
+</table>

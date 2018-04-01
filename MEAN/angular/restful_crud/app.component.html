@@ -1,0 +1,42 @@
+<div id="wrapper">
+  <h1>New Task</h1>
+  <div id="new">
+    <form (submit)="createTask()">
+      <table>
+        <tr>
+          <td><label for="newTask.title">Title</label></td>
+          <td><input [(ngModel)]="newTask.title" name="newTask.title" id="newTask.title" placeholder="Title is required"></td>
+        </tr>
+        <tr>
+            <td><label for="newTask.description">Description&nbsp;</label></td>
+            <td><input [(ngModel)]="newTask.description" name="newTask.description" id="newTask.description" placeholder="Description is optional"></td>
+        </tr>
+      </table> <input type="submit" value="Create">
+    </form>
+  </div>
+  <!-- edit task / hidden -->
+  <div id="edit" [style.display]="isEditOn() ? 'flow-root': 'none'">
+    <h1>Edit Task</h1>
+    <form (submit)="updateTask(editTask._id)">
+      <table>
+        <tr>
+          <td><label for="editTask.title">Title</label></td>
+          <td><input [(ngModel)]="editTask.title" name="editTask.title" id="editTask.title" placeholder="Title is required"></td>
+        </tr>
+        <tr>
+          <td><label for="editTask.description">Description&nbsp;</label></td>
+          <td><input [(ngModel)]="editTask.description" name="editTask.description" id="editTask.description" placeholder="Description is optional"></td>
+        </tr>
+      </table> <input type="submit" value="Update">
+    </form>
+  </div>
+  <h1>Task List</h1>
+  <div id="list">
+    <div *ngFor="let data of localData">
+      <h2>{{ data.title }}</h2>
+      <h3>{{ data.description }}</h3>
+      <button (click)="showEdit(data._id)">Edit</button>
+      <button (click)="deleteTask(data._id)">Delete</button>
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Preferred Position</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{ player.name }}</td>
+      <td>{{ player.position }}</td>
+      <td><button (click)="deletePlayer(player._id, player.name)" id="deleteButton">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

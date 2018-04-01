@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+    Restful tasks API
+  </h1>
+</div>
+<button (click)="tasksButtonClick()">
+  Click to get all tasks
+</button>
+<br>
+<br>
+<form (submit)="getTaskId()">
+  <input [(ngModel)]="getTask_id" name="getTask_id" placeholder="last 3 digits of ID">
+  <input type="submit" value="Click to get one task">
+</form>
+<br>
+<hr>
+<ul>
+  <li *ngFor="let data of localData">ID: {{ data._id }} | {{ data.title }} - {{ data.description }}</li>
+</ul>
+
+
+

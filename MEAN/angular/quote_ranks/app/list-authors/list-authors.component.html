@@ -1,0 +1,16 @@
+<a href="new">Add a quotable author</a>
+<p>We have quotes by:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Actions available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let each of authors'>
+      <td>{{ each.name }}</td>
+      <td><button (click)="viewQuotes( each._id )">View quotes</button><button (click)="edit( each._id )">Edit</button></td>
+    </tr>
+  </tbody>
+</table>

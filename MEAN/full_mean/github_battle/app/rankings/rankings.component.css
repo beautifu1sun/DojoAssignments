@@ -1,0 +1,12 @@
+.info{
+    display: inline-block;
+    text-align: center;
+}
+.score{
+    vertical-align: top;
+    display: inline-block;
+}
+.user{
+    border: 2px solid black;
+    margin: 5px;
+}

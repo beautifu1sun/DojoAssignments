@@ -1,0 +1,18 @@
+<h1>Edit Product</h1>
+<form (submit)="updateProduct()">
+  <table>
+    <tr>
+      <td><label for="this.existedProduct.title">Title</label></td>
+      <td><input type="text" [(ngModel)]="this.existedProduct.title" name="this.existedProduct.title" id="this.existedProduct.title"></td>
+    </tr>
+    <tr>
+      <td><label for="this.existedProduct.price">Price</label></td>
+      <td><input type="text" [(ngModel)]="this.existedProduct.price" name="this.existedProduct.price" id="this.existedProduct.price"></td>
+    </tr>
+    <tr>
+      <td><label for="this.existedProduct.imageUrl">Image url</label></td>
+      <td><input type="text" [(ngModel)]="this.existedProduct.imageUrl" name="this.existedProduct.imageUrl" id="this.existedProduct.imageUrl"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Update" id="updateButton">&nbsp;<button (click)="delete(this.existedProduct._id)" id="deleteButton">Delete</button>
+</form>

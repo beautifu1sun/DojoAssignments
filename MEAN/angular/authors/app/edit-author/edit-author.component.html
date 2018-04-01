@@ -1,0 +1,10 @@
+<a href="/">Home</a>
+<p>Edit this author:</p>
+<form (submit)="update()">
+  <label for="this.existedAuthor.name">Name:</label>
+  <br>
+  <input type="text" [(ngModel)]="this.existedAuthor.name" name="this.existedAuthor.name" id="this.existedAuthor.name">
+  <br>
+  <button (click)="cancel()">Cancel</button>
+  <input type="submit" value="Submit">
+</form>

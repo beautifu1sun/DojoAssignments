@@ -1,0 +1,18 @@
+<a href="/">Home</a>&nbsp;&nbsp;&nbsp;<a href="/write/{{existedAuthor._id}}">Add a quote</a>
+<p>Quotes by {{ existedAuthor.name }}:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Quote</th>
+      <th>Rating</th>
+      <th>Actions available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let each of existedAuthor['quotes']">
+      <td>{{ each.quote }}</td>
+      <td>{{ each.rating }}</td>
+      <td><button (click)="vote( each._id, existedAuthor._id, 1 )">Vote Up</button><button (click)="vote( each._id, existedAuthor._id, -1 )">Vote Down</button><button (click)="deleteQuote( each._id, existedAuthor._id )">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

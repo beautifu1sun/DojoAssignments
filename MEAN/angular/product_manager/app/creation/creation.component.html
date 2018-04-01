@@ -1,0 +1,18 @@
+<h1>Create a New Product</h1>
+<form (submit)="addProduct()">
+  <table>
+    <tr>
+      <td><label for="this.newProduct.title">Title</label></td>
+      <td><input type="text" [(ngModel)]="this.newProduct.title" name="this.newProduct.title" id="this.newProduct.title"></td>
+    </tr>
+    <tr>
+      <td><label for="this.newProduct.price">Price</label></td>
+      <td><input type="text" [(ngModel)]="this.newProduct.price" name="this.newProduct.price" id="this.newProduct.price"></td>
+    </tr>
+    <tr>
+      <td><label for="this.newProduct.imageUrl">Image url</label></td>
+      <td><input type="text" [(ngModel)]="this.newProduct.imageUrl" name="this.newProduct.imageUrl" id="this.newProduct.imageUrl"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Create" id="createButton">&nbsp;<button (click)="cancel()" id="cancelButton">Cancel</button>
+</form>

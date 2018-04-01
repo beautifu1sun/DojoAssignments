@@ -1,0 +1,7 @@
+<h1>Product List</h1>
+<div *ngFor="let product of productList" id="product">
+  <img style="height: 150px; width: 180px" src="{{ product.imageUrl }}" onerror="this.src='../../assets/no_image.jpg'">
+  <p>{{ product.title }}</p>
+  <p>${{ product.price }}</p>
+  <button (click)="edit(product._id)">Edit</button><button (click)="delete(product._id)">Delete</button>
+</div>

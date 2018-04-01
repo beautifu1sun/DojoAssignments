@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+<p>Add a new author:</p>
+<span *ngIf="error">The name must contain at least three characters!</span>
+<form (submit)="add()">
+  <label for="this.newAuthor.name">Name:</label>
+  <br>
+  <input type="text" [(ngModel)]="this.newAuthor.name" name="this.newAuthor.name" id="this.newAuthor.name">
+  <br>
+  <button (click)="cancel()">Cancel</button>
+  <input type="submit" value="Submit">
+</form>

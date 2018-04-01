@@ -1,0 +1,10 @@
+#wrapper{
+    border: 2px solid black;
+    padding: 10px 30px;
+    background-color: white;
+    height: 850px;
+}
+a{
+    padding-top: 20px;
+    font-size: 30px;
+}

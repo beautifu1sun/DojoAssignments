@@ -1,0 +1,36 @@
+.user1{
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;
+}
+.user2{
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    left: 5%;
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;
+}
+button{
+    color: white;
+    padding: 0% 10%;
+    background-color: blue;
+}
+input{
+    font-size: 18px;
+    margin: 0px 5px;
+}
+#battleButton{
+    color: black;
+    padding: 8px 17%;
+    background-color: orange;
+    left: 26%;
+    position: relative;
+}
+span{
+    color:red;
+}

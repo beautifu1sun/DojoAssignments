@@ -1,0 +1,22 @@
+span{
+    color: red;
+}
+#submitButton{
+    color: white;
+    background-color: green;
+    width: 30%;
+    position: relative;
+    left: 50%;
+}
+table tr :last-child{
+    width: 80%;
+}
+#wrapper{
+    margin: 5px;
+    padding: 10px 30px;
+    border: 2px solid black;
+    background-color: white;
+}
+#submitButton:disabled{
+    background-color: grey;
+}

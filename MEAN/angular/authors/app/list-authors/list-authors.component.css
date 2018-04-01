@@ -1,0 +1,10 @@
+th{
+    color: white;
+}
+p, td{
+    color: darkmagenta;
+}
+th, td, table{
+    border: solid 2px black;
+    padding: 0px 10px;
+}

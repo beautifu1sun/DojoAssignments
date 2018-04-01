@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing Page</title>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Anonymous Notes</h1>
+    <form (submit)="submitPost()">
+      <label for="newPost">Note:<input type="text" [(ngModel)]="newPost" name="newPost" id="newPost"></label><input type="submit" id="submitButton" value="Add Note">
+      <span *ngIf="error" id="error">The note should be a minimum of 3 characters.</span>
+    </form>
+    <div id="board">
+      <div *ngFor="let post of posts">
+        <p style="text-align:right">Noted on: {{ post.createdAt | date: "MMM d, yyyy, h:mm:ss a" }}</p>
+        <p>{{ post.text }}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
