@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\bin\Debug\netcoreapp2.0\boxing.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\bin\Debug\netcoreapp2.0\boxing.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\bin\Debug\netcoreapp2.0\boxing.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\bin\Debug\netcoreapp2.0\boxing.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\bin\Debug\netcoreapp2.0\boxing.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\obj\Debug\netcoreapp2.0\boxing.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\obj\Debug\netcoreapp2.0\boxing.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\obj\Debug\netcoreapp2.0\boxing.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\obj\Debug\netcoreapp2.0\boxing.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\boxing\obj\Debug\netcoreapp2.0\boxing.pdb
