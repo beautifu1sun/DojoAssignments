@@ -1,0 +1,21 @@
+@model the_wall.Models.Login
+
+<form asp-controller="Wall" asp-action="login" method="post">
+    <span>@ViewBag.LoginError</span>
+    <table>
+    <tr>
+        <td><label for="EmailLog">Email Address</label></td>
+        <td><input type="text" name="EmailLog" id="EmailLog">
+        <span asp-validation-for="EmailLog"></span></td>
+    </tr>
+    <tr>
+        <td><label for="PasswordLog">Password</label></td>
+        <td><input type="text" name="PasswordLog" id="PasswordLog">
+        <span asp-validation-for="PasswordLog"></span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" class="btn btn-default" value="Sign in">
+    </tr>
+</table>
+</form> 

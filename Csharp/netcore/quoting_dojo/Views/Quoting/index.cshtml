@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="~/css/index.css">
+
+<h1>Welcome to QuotingDojo</h1>
+<form action="quotes" method="post">
+    <table>
+        <tr>
+            <td><label for="name">Your name:</label></td>
+            <td><input type="text" name="name" id="name"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="quote">Your quote:</label></td>
+            <td colspan="2"><textarea name="quote" id="quote" cols="40" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input class="btn btn-default" type="submit" value="Add my quote!"></td>
+            <td><a class="btn btn-default" href="quotes">Skip to quotes!</a></td>
+        </tr>
+    </table>
+</form>

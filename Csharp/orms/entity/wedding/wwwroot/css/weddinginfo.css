@@ -1,0 +1,19 @@
+*{
+    margin: 5px;
+    padding: 5px;
+}
+h1{
+    display: inline-block;
+    margin-right: 30px;
+}
+a{
+    font-size: 20px;
+}
+p{
+    font-size: 19px;
+    margin-left: 15px;
+}
+i{
+    font-size: 18px;
+    margin-left: 25px;
+}

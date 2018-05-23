@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\bin\Debug\netcoreapp2.0\log_reg.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\bin\Debug\netcoreapp2.0\log_reg.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\bin\Debug\netcoreapp2.0\log_reg.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\bin\Debug\netcoreapp2.0\log_reg.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\bin\Debug\netcoreapp2.0\log_reg.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\obj\Debug\netcoreapp2.0\log_reg.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\obj\Debug\netcoreapp2.0\log_reg.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\obj\Debug\netcoreapp2.0\log_reg.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\obj\Debug\netcoreapp2.0\log_reg.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\log_reg\obj\Debug\netcoreapp2.0\log_reg.pdb

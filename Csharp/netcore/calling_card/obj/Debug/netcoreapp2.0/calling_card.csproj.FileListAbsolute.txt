@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\bin\Debug\netcoreapp2.0\calling_card.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\bin\Debug\netcoreapp2.0\calling_card.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\bin\Debug\netcoreapp2.0\calling_card.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\bin\Debug\netcoreapp2.0\calling_card.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\bin\Debug\netcoreapp2.0\calling_card.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\obj\Debug\netcoreapp2.0\calling_card.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\obj\Debug\netcoreapp2.0\calling_card.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\obj\Debug\netcoreapp2.0\calling_card.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\obj\Debug\netcoreapp2.0\calling_card.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\calling_card\obj\Debug\netcoreapp2.0\calling_card.pdb

@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="~/css/index.css">
+<script src="~/js/index.js"></script>
+
+<h1>Movie Lookup:</h1>
+<form action="movie_search" method="POST" id="movieSearch">
+    <label for="movieName">Search for a movie:</label>
+    <input type="text" name="movieName" id="movieName">
+</form>
+<hr>
+<div id="movieList">
+@foreach(var movie in @ViewBag.allMovies){
+    <strong>@movie["name"]&nbsp;&nbsp;&nbsp;Rating:&nbsp;@movie["rating"]&nbsp;&nbsp;&nbsp;Released:&nbsp;@movie["released"]</strong>
+}
+</div>

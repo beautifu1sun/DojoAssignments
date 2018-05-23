@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    text-align: center;
+}
+strong{
+    font-size: 25px;
+}
+#stats{
+    margin: 20px 0px;
+}
+article{
+    border: 2px solid black;
+    display: inline-block;
+    padding: 20px;
+}
+button{
+    font-size: 17px;
+    padding: 5px 15px;
+    margin: 7px;
+}
+#restart{
+    font-size: 17px;
+    padding: 5px 15px;
+    margin: 7px;
+    display: none;
+    color: white;
+}

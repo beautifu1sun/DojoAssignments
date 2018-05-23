@@ -1,0 +1,14 @@
+*{
+    margin: 5px;
+    padding: 5px;
+}
+span{
+    color:red;
+}
+h1{
+    display: inline-block;
+    margin-right: 50px;
+}
+a{
+    font-size: 25px;
+}

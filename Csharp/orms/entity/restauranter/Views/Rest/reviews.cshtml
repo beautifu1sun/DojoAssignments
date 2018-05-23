@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="~/css/reviews.css">
+
+@foreach(var review in ViewBag.allReviews){
+    <div class="review">
+        <p>Review for: @review.Restaurant &nbsp;&nbsp;&nbsp; @review.Rating star(s)</p>
+        <p>Reviewer: @review.Reviewer, @review.DateOfVisit.ToString("MMM dd, yyyy")</p>
+        <q>@review.Content</q>
+        <br>
+        <a href="voteup/@review.ReviewId">Helpful</a><spann>@review.UsefulCount</spann><a href="votedown/@review.ReviewId">Not Helphul</a><span>@review.NotusefulCount</span>
+    </div>
+}

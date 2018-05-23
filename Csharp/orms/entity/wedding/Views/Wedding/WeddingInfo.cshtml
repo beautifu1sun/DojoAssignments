@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="~/css/weddinginfo.css">
+
+<h1>@ViewBag.wedding.WedderOne and @ViewBag.wedding.WedderTwo's Wedding</h1><a href="/dashboard">Dashboard</a><a href="/logout">Log out</a>
+<p>Date: @ViewBag.wedding.Date.ToString("MMMM dd, yyyy")</p>
+<p>Where: @ViewBag.wedding.WeddingAddress</p>
+<p>Guests:</p>
+@foreach(var guest in @ViewBag.wedding.Guests){
+    <i>@guest.Guest.FirstName @guest.Guest.LastName</i>
+}

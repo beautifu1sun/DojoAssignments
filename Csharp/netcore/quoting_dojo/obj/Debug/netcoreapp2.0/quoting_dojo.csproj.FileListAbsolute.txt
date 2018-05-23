@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\bin\Debug\netcoreapp2.0\quoting_dojo.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\bin\Debug\netcoreapp2.0\quoting_dojo.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\bin\Debug\netcoreapp2.0\quoting_dojo.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\bin\Debug\netcoreapp2.0\quoting_dojo.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\bin\Debug\netcoreapp2.0\quoting_dojo.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\obj\Debug\netcoreapp2.0\quoting_dojo.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\obj\Debug\netcoreapp2.0\quoting_dojo.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\obj\Debug\netcoreapp2.0\quoting_dojo.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\obj\Debug\netcoreapp2.0\quoting_dojo.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\quoting_dojo\obj\Debug\netcoreapp2.0\quoting_dojo.pdb

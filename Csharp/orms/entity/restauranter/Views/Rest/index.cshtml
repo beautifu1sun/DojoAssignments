@@ -1,0 +1,48 @@
+@model restauranter.Models.Review
+<link rel="stylesheet" href="~/css/index.css">
+
+<h1>Write a new Review:</h1>
+<form asp-action="Post" asp-controller="Rest" method="POST">
+<table>
+    <tr>
+        <td><label asp-for="Reviewer"></label></td>
+        <td><input asp-for="Reviewer">
+            <span asp-validation-for="Reviewer"></span></td>
+        <td><label asp-for="Rating"></label></td>
+        <td><select asp-for="Rating">
+            <option selected value=5>5</option>
+            <option value=4>4</option>
+            <option value=3>3</option>
+            <option value=2>2</option>
+            <option value=1>1</option>
+            </select></td>
+    </tr>    
+    <tr>
+        <td><label asp-for="Restaurant"></label></td>
+        <td><input asp-for="Restaurant">
+            <span asp-validation-for="Restaurant"></span></td>
+        <td></td>
+        <td></td>
+    </tr>    
+    <tr>
+        <td><label asp-for="Content"></label></td>
+        <td>@Html.TextAreaFor(model => model.Content)
+            <span asp-validation-for="Content"></span></td>
+        <td></td>
+        <td></td>
+    </tr>    
+    <tr>
+        <td><label asp-for="DateOfVisit"></label></td>
+        <td><input asp-for="DateOfVisit" type="date">
+            <span>@ViewBag.ErrorDate</span></td>
+        <td></td>
+        <td></td>
+    </tr>    
+    <tr>
+        <td></td>
+        <td><button type="submit" class="btn btn-default">Submit</button></td>
+        <td></td>
+        <td></td>
+    </tr>    
+</table>
+</form>

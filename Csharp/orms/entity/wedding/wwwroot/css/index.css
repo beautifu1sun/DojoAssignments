@@ -1,0 +1,15 @@
+*{
+    margin: 5px;
+    padding: 5px;
+}
+span{
+    color: red;
+}
+#log{
+    width: 40%;
+    display: inline-block;
+}
+#reg{
+    width: 55%;
+    display: inline-block;
+}

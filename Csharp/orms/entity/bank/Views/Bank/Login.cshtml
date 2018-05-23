@@ -1,0 +1,22 @@
+@model bank.Models.LoginViewModel;
+<link rel="stylesheet" href="~/css/index.css">
+<h1>Login</h1>
+<form asp-action="Login" asp-controller="Bank" method="POST">
+    <table>
+        <span>@ViewBag.loginError</span>
+        <tr>
+            <td><label asp-for="Email"></label></td>
+            <td><input asp-for="Email">
+            <span asp-validation-for="Email"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Password"></label></td>
+            <td><input asp-for="Password">
+            <span asp-validation-for="Password"></span></td>
+        </tr>
+        <tr>
+            <td><Button type="submit" class="btn btn-default">Submit</Button></td>
+            <td><a href="/">Need to register?</a></td>
+        </tr>
+    </table>
+</form>

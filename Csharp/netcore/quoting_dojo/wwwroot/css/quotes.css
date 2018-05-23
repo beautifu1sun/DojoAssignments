@@ -1,0 +1,11 @@
+.quote{
+    border-bottom: 1px solid black;
+    width: 50%;
+    font-size: 20px;
+    margin: 10px;
+    position: relative;
+}
+.quote p{
+    text-align: right;
+    font-size: 17px;
+}

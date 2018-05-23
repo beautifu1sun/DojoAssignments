@@ -1,0 +1,10 @@
+dotnet add package Pomelo.EntityFrameworkCore.MySql -v 2.0.1
+dotnet add package MySql.Data -v 8.0.9-*
+
+for postGres:
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL -v=2.0.1
+dotnet add package Microsoft.EntityFrameworkCore.Tools -v=2.0.1
+
+//
+dotnet ef migrations add YourMigrationName
+dotnet ef database update

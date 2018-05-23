@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="~/css/index.css">
+@model log_reg.Models.User
+
+<h1>Register</h1>
+<form asp-controller="Logreg" asp-action="Register" method="POST">
+    <table>
+        <tr>
+            <td><label asp-for="firstName"></label></td>
+            <td><input asp-for="firstName">
+            <span asp-validation-for="firstName"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="lastName"></label></td>
+            <td><input asp-for="lastName">
+            <span asp-validation-for="lastName"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="email"></label></td>
+            <td><input asp-for="email">
+            <span asp-validation-for="email"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="password"></label></td>
+            <td><input asp-for="password">
+            <span asp-validation-for="password"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="confirmPassword"></label></td>
+            <td><input asp-for="confirmPassword">
+            <span asp-validation-for="confirmPassword"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" class="btn btn-default" value="Register"></td>
+        </tr>
+    </table>
+</form>
+<h1>Sign in</h1>
+<form action="login" method="post">
+<table>
+    <span>@ViewBag.error</span>
+    <tr>
+        <td><label for="emailLog">Email Address</label></td>
+        <td><input type="text" name="emailLog" id="emailLog"></td>
+    </tr>
+    <tr>
+        <td><label for="passwordLog">Password</label></td>
+        <td><input type="text" name="passwordLog" id="passwordLog"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" class="btn btn-default" value="Sign in"></td>
+    </tr>
+</table>
+</form> 

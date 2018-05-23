@@ -1,0 +1,27 @@
+form{
+    margin-top: 10px;
+}
+input{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+.note{
+    border-bottom: 1px solid grey;
+    width: 40%;
+    padding: 5px;
+}
+.note h2{
+    display: inline-block;
+}
+.note textarea{
+    margin-bottom: 10px;
+    display: block;
+    padding: 5px;
+    overflow-y: auto;
+}
+a{
+    position: relative;
+    left: 33px;
+    font-size: 22px;
+}

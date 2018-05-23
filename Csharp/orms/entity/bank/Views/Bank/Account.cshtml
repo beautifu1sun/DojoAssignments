@@ -1,0 +1,28 @@
+@model bank.Models.Transaction;
+<link rel="stylesheet" href="~/css/account.css">
+
+<h1>Welcome, @ViewBag.user.FirstName @ViewBag.user.LastName</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout">Logout</a>
+<h3>Current balance: $@ViewBag.user.Balance</h3>
+@if(@ViewBag.fundsError!=null){
+    <span>@ViewBag.fundsError</span>
+}
+<form asp-action="Transaction" asp-controller="Bank" method="POST">
+    <label for="Amount">Deposit/Withdraw:</label><input asp-for="Amount" id="Amount">
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var trans in @ViewBag.transactions){
+        <tr>
+            <td>$&nbsp;@trans.Amount</td>
+            <td>@trans.CreatedAt.ToString("MMM dd yyyy")</td>
+        </tr>
+        }
+    </tbody>
+</table>

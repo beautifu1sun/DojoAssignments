@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\bin\Debug\netcoreapp2.0\movie_api.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\bin\Debug\netcoreapp2.0\movie_api.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\bin\Debug\netcoreapp2.0\movie_api.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\bin\Debug\netcoreapp2.0\movie_api.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\bin\Debug\netcoreapp2.0\movie_api.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\obj\Debug\netcoreapp2.0\movie_api.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\obj\Debug\netcoreapp2.0\movie_api.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\obj\Debug\netcoreapp2.0\movie_api.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\obj\Debug\netcoreapp2.0\movie_api.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\netcore\movie_api\obj\Debug\netcoreapp2.0\movie_api.pdb

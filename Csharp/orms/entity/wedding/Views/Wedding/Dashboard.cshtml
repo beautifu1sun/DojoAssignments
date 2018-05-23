@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="~/css/dashboard.css">
+
+<h1>Welcome to the Wedding Planner</h1><a href="logout" id="logout">Logout</a>
+<table>
+    <tr>
+        <th>Wedding</th>
+        <th>Date</th>
+        <th>Guests</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var wedding in ViewBag.weddings){    
+    <tr>
+        <td><a href="wedding_info/@wedding.WeddingId">@wedding.WedderOne & @wedding.WedderTwo</a></td>
+        <td>@wedding.Date.ToString("MMM dd yyyy")</td>
+        <td>@wedding.Guests.Count</td>
+        <td>
+        @if(@wedding.CreatorId == ViewBag.userId){
+            <a href="delete_wedding/@wedding.WeddingId">Delete</a>
+        }
+        else{
+            var inlist = false;
+            foreach(var guest in wedding.Guests){
+                if(guest.GuestId == ViewBag.userId){
+                    inlist = true;
+                }
+            }
+            if (inlist){
+                <a href="unrvsp/@wedding.WeddingId">Un-RVSP</a>
+            }
+            else{
+                <a href="rvsp/@wedding.WeddingId">RVSP</a>
+            }
+        }
+        </td>   
+    </tr>
+    }
+</table> 
+<a href="/new_wedding" type="button" class="btn btn-default">New Wedding</a>   

@@ -1,0 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="~/js/index.js"></script>
+<link rel="stylesheet" href="~/css/index.css">
+
+<h1>Notes</h1>
+<hr>
+@foreach(var note in @ViewBag.allNotes){
+    <div class="note">
+        <h2>@note["title"]</h2>
+        <a href='delete_note/@note["id"]'>Delete</a>
+        <form action='update_note/@note["id"]' method="POST">
+            <textarea name='note' cols='30' rows='10' placeholder='Enter description here...'>@note["note"]</textarea>
+            <input type="submit" value="update" style="display: none">
+        </form>
+    </div>
+}
+<form action="add_note" method="POST" >
+    <input type="text" name="title" id="title" placeholder="Insert note title here...">
+    <input class="btn btn-default" type="submit" value="Add Note">
+</form>
