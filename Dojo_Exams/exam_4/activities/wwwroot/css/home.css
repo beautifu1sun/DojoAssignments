@@ -1,0 +1,31 @@
+*{
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 25px 5px 5px;
+    margin: 5px;    
+}
+p,h1{
+    display: inline-block;
+}
+p, a{
+    font-size: 20px;
+}
+h1{
+    margin-right: 30%;
+}
+.btn{
+    margin-left: 65%;
+}
+header{
+    border-bottom: 1px solid gray;
+    width:80%;
+    margin-bottom: 20px;
+}
+span{
+    color:red;
+}

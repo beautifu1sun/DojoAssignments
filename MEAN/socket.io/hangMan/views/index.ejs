@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<link rel='stylesheet' href='/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		var socket = io.connect();
+    		socket.on('display_word',function(data){
+    			$('#disRandWord').html(data.word)
+				$('#triesRemaining').html("LIVES LEFT: " + String(data.tries))
+				$('#placeholder').html(data.placehold)
+    		})
+    		$('#guessButton').click(function(){
+    			let guess = document.getElementById('guess').value
+    			console.log(guess)
+
+    			$('#guess').val('')
+    			socket.emit('guess_made',guess)
+    		})
+    		$('#resetButton').click(function(){
+    			$('#resetButton').toggle()
+				$('#guessButton').toggle()
+    			socket.emit('new_game')
+			})
+			$('#newGameButton').	click(function(){
+				$('#newGameButton').toggle()
+				$('#guessButton').toggle()
+    			socket.emit('new_game')
+			})	
+    		socket.on('game_over',function(){
+    			$('#resetButton').toggle()
+    			$('#guessButton').toggle()
+			})
+			socket.on('game_win',function(){
+    			$('#newGameButton').toggle()
+    			$('#guessButton').toggle()
+			})
+    		socket.on('correct_guess', function(placehold){
+    			$('#placeholder').html(placehold)
+    		})
+
+    	});
+    </script>
+</head>
+<body>
+	<div id="wrapper">
+			<h1>Hangman</h1>
+			<h4>Guess the word</h4>
+			<h1 id="placeholder"></h1>
+			<h2 id="triesRemaining"></h2>
+		<div>
+			<input type="text" id="guess" name="guess" placeholder="Single letter only">
+			<button id="guessButton">Submit guess</button>
+			<button id="resetButton">Reset Game</button>
+			<button id="newGameButton">New Game</button>
+		</div>
+	</div>
+</body>
+</html>

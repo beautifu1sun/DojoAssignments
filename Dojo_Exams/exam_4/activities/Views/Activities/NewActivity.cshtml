@@ -1,0 +1,43 @@
+@model activities.Models.ActivityViewModel;
+<link rel="stylesheet" href="~/css/newactivity.css">
+<header>
+<h1>Dojo Activity Center</h1><a href="/home">Home</a><a href="/logout">Log off</a>
+</header>
+<h2>Create an Activity!</h2>
+
+<form asp-action="PostNewActivity" asp-controller="Activities" method="POST">
+    <table>
+        <tr>
+            <td><label asp-for="Title"></label></td>
+            <td><input asp-for="Title">
+                <span asp-validation-for="Title"></span></td>
+            <td><label asp-for="Time"></label></td>
+            <td><input asp-for="Time" placeholder="06:00pm">
+                <span asp-validation-for="Time"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Date"></label></td>
+            <td><input asp-for="Date" type="date">
+                <span>@ViewBag.ErrorDate</span></td>
+            <td><label asp-for="Duration"></label></td>
+            <td><input asp-for="Duration">
+                <select name="TimeLength" id="TimeLength">
+                    <option value="Days">Days</option>  
+                    <option value="Hours" selected>Hours</option>
+                    <option value="Minutes">Minutes</option>
+                </select>
+                <span asp-validation-for="Duration"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Description"></label></td>
+            <td colspan="3"><textarea asp-for="Description" cols="65" rows="7"></textarea>
+                <span asp-validation-for="Description"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><button type="submit" class="btn btn-default">Create Activity</button></td>
+            <td></td>
+        </tr>
+    </table>
+</form>

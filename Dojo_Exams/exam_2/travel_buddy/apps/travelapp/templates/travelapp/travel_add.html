@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travelapp/css/travel_add_style.css' %}">
+    <title>Add Plan</title>
+</head>
+<body>
+    <a href="/travels">Home</a>
+    <a href="/users/logout">Logout</a>
+    <br>
+    <h1>Add a Trip</h1>
+    {% if messages %}
+    <ul class='errors'>
+    {% for message in messages %}
+        {% if 'trip' in message.tags %}
+            <li>{{ message }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <form action="add/create" method="post">
+    {% csrf_token %}
+    <table>
+        <tr><td><label for="dest">Destination:</label></td><td><input type="text" name="dest" id="dest"></td></tr>
+        <tr><td><label for="desc">Description:</label></td><td><input type="text" name="desc" id="desc"></td></tr>
+        <tr><td><label for="from">Travel Date From:</label></td><td><input type="date" name="from" id="from"></td></tr>
+        <tr><td><label for="to">Travel Date To:</label></td><td><input type="date" name="to" id="to"></td></tr>
+    </table>
+    <input type="submit" value="Add" id="submit">
+    </form>
+</body>
+</html>

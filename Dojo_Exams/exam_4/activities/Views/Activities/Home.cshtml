@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="~/css/home.css">
+<header>
+<h1>Dojo Activity Center</h1><p>Welcome, @ViewBag.user.FirstName</p><a href="/logout" id="logout">Log off</a>
+</header>
+<span>@ViewBag.ErrorJoin</span>
+<table>
+    <tr>
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Number of Participants</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(var activity in ViewBag.activities){    
+    <tr>
+        <td><a href="/activity_info/@activity.ActivityId">@activity.Title</a></td>
+        <td>@activity.StartDate.ToString("M/dd @ h:mmtt")</td>
+        <td>@activity.Duration</td>
+        <td>@activity.Creator.FirstName</td>
+        <td>@activity.Guests.Count</td>
+        <td>
+        @if(@activity.CreatorId == ViewBag.user.UserId){
+            <a href="/delete_activity/@activity.ActivityId">Delete</a>
+        }
+        else{
+            var inlist = false;
+            foreach(var guest in activity.Guests){
+                if(guest.GuestId == ViewBag.user.UserId){
+                    inlist = true;
+                }
+            }
+            if (inlist){
+                <a href="/leave_activity/@activity.ActivityId">Leave</a>
+            }
+            else{
+                <a href="/join_activity/@activity.ActivityId">Join</a>
+            }
+        }
+        </td>   
+    </tr>
+    }
+</table> 
+<a href="/new" type="button" class="btn btn-default">Add New Activity!</a>   

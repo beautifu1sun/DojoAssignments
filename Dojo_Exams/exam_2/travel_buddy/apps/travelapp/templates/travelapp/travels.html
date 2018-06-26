@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travelapp/css/travels_style.css' %}">
+    <title>Travels Dashboard</title>
+</head>
+<body>
+    <h1 style="display: inline">Hello, {{ user.name }}!</h1><a href="users/logout" class="link">Logout</a>
+    <br>
+    <br>
+    <h2>Your Trip Schedules</h2>
+    <table id="my_trips">
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Travel Start Date</th>
+                <th>Travel End Date</th>
+                <th>Plan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in user.created_plans.all %}
+            <tr>
+                <td><a href="travels/destination/{{ plan.id }} ">{{ plan.destination }} </a></td>
+                <td>{{ plan.date_from }}</td>
+                <td>{{ plan.date_to }} </td>
+                <td>{{ plan.description }}</td>
+            </tr>
+            {% endfor %}
+            {% for plan in user.joined_plans.all %}
+            <tr>
+                <td><a href="travels/destination/{{ plan.id }} ">{{ plan.destination }} </a></td>
+                <td>{{ plan.date_from }}</td>
+                <td>{{ plan.date_to }} </td>
+                <td>{{ plan.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <h2>Other User's Travel Plans</h2>
+    <table id="other_trips">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Destination</th>
+                <th>Travel Start Date</th>
+                <th>Travel End Date</th>
+                <th>Do You Want To Join?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in otherplans %}
+            <tr>
+                <td>{{ plan.creator.name }}</td>
+                <td><a href="travels/destination/{{ plan.id }} ">{{ plan.destination }} </a></td>
+                <td>{{ plan.date_from }}</td>
+                <td>{{ plan.date_to }} </td>
+                <td><a href="travel/join/{{ plan.id }}">Join</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="travels/add" class="link">Add Travel Plan</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travelapp/css/travel_info_style.css' %}">
+    <title>Destination</title>
+</head>
+<body>
+    <a href="/travels">Home</a>
+    <a href="/users/logout">Logout</a>
+    <br>
+    <h1>{{ plan.destination }}</h1>
+    <h3>Planned by: {{ plan.creator.name }}</h3>
+    <h3>Description: {{ plan.description }}</h3>
+    <h3>Travel Date From: {{ plan.date_from }}</h3>
+    <h3>Travel Date To: {{ plan.date_to }}</h3>
+    <br>
+    <br>
+    <h2>Other users joining the trip</h2>
+    {% for user in plan.joined_users.all %}
+    <h3>{{ user.name }}</h3>
+    {% endfor %}
+</body>
+</html>

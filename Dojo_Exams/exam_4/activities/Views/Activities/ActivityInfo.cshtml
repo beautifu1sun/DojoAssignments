@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="~/css/activityinfo.css">
+<header>
+<h1>Dojo Activity Center</h1><a href="/home">Home</a><a href="/logout">Log off</a>
+</header>
+<h2>@ViewBag.activity.Title</h2>
+ @if(@ViewBag.activity.CreatorId == ViewBag.userId){
+            <a href="/delete_activity/@ViewBag.activity.ActivityId" type="button" class="btn btn-default">Delete</a>
+        }
+        else{
+            var inlist = false;
+            foreach(var guest in ViewBag.activity.Guests){
+                if(guest.GuestId == ViewBag.userId){
+                    inlist = true;
+                }
+            }
+            if (inlist){
+                <a href="/leave_activity/@ViewBag.activity.ActivityId" type="button" class="btn btn-default">Leave</a>
+            }
+            else{
+                <a href="/join_activity/@ViewBag.activity.ActivityId" type="button" class="btn btn-default">Join</a>
+            }
+        }
+<p>Event Coordinator: @ViewBag.activity.Creator.FirstName</p>
+<p>Description:</p>
+    <i>@ViewBag.activity.Description</i>
+<p>Participants:</p>
+    <ul>
+        @foreach(var guest in ViewBag.activity.Guests){
+            <li>@guest.Guest.FirstName</li>
+        }
+    </ul>
