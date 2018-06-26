@@ -1,5 +1,7 @@
 desktop.ini
+*.pyc
 .vscode/
 node_modules/
 debug/
 obj/
+bin/

@@ -3,7 +3,7 @@
 namespace fundamentals1
 {
     class Program
-    {
+    {}
         public static void Main(string[] args)
         {
             // --- 1 ---
@@ -44,7 +44,7 @@ namespace fundamentals1
             //         Console.WriteLine("Buzz");
             //     }
             // }
-            // --- 5 ---
+            // --- 5 ----
             // Generate 10 random values and output the respective word, in relation to step three, for the generated values
             // Random rand = new Random();
             // for (int i = 0; i < 10; i++){
