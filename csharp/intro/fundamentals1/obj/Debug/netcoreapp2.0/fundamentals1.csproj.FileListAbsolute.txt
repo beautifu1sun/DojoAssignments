@@ -8,3 +8,4 @@ C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\fundamentals1\obj\Debug
 C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\fundamentals1\obj\Debug\netcoreapp2.0\fundamentals1.AssemblyInfo.cs
 C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\fundamentals1\obj\Debug\netcoreapp2.0\fundamentals1.dll
 C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\fundamentals1\obj\Debug\netcoreapp2.0\fundamentals1.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\fundamentals1\obj\Debug\netcoreapp2.0\fundamentals1.csprojResolveAssemblyReference.cache

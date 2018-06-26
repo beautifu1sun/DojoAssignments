@@ -1,0 +1,21 @@
+*{
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 15px;
+}
+table{
+    border-collapse: collapse;
+}
+table, th, td{
+    border: 2px solid black;
+}
+#newB{
+    background-color: #6b8186;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+th{
+    color: white;
+    background-color: #d3d3d3;
+}

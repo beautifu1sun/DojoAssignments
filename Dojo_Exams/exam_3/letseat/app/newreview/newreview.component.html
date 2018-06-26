@@ -1,0 +1,21 @@
+<h2>Write a review for {{ rest.name }}</h2>
+<form (submit)="postReview()">
+  <label for="newReview.reviewer">Your Name: <input type="text" [(ngModel)]="newReview.reviewer" name="newReview.reviewer" id="newReview.reviewer" required minlength="3" #reviewer="ngModel"></label>
+  <br>
+  <p *ngIf="errorsOn && !reviewer.valid"><span>Names must contain at least three characters!</span></p>
+  <label for="newReview.rating">Stars:</label>
+    <select [(ngModel)]="newReview.rating" name="newReview.rating" id="newReview.rating">
+    <option value="1">1 star</option>
+    <option value="2">2 stars</option>
+    <option value="3">3 stars</option>
+    <option value="4">4 stars</option>
+    <option value="5">5 stars</option>
+  </select>
+  <br>
+  <label for="newReview.review">Your review: </label><br>
+  <input type="text" [(ngModel)]="newReview.review" name="newReview.review" id="newReview.review" required minlength="3" #review="ngModel">
+  <br>
+  <p *ngIf="errorsOn && !review.valid"><span>Reviews must contain at least three characters!</span></p>
+  <button (click)="cancel()" id="cancelButton">Cancel</button>
+  <input type="submit" id="submitButton" value="Submit">
+</form>

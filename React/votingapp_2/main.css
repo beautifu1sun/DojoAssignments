@@ -1,0 +1,17 @@
+*{
+    text-align: center;
+}
+.vote{
+    font-size: 30px;
+    display: block;
+    position: relative;
+    border: 2px solid black;
+    width: 20%;
+    padding: 20px;
+    left: 40%;
+}
+.vote span{
+    border: 2px solid red;
+    border-radius: 30px;
+    padding: 10px;
+}

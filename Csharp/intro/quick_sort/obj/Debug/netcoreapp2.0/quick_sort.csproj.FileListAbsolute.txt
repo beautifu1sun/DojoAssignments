@@ -1,0 +1,11 @@
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\bin\Debug\netcoreapp2.0\quick_sort.deps.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\bin\Debug\netcoreapp2.0\quick_sort.runtimeconfig.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\bin\Debug\netcoreapp2.0\quick_sort.runtimeconfig.dev.json
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\bin\Debug\netcoreapp2.0\quick_sort.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\bin\Debug\netcoreapp2.0\quick_sort.pdb
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.csprojResolveAssemblyReference.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.AssemblyInfo.cs
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.dll
+C:\Users\Dmitrii\desktop\it\dojoassignments\csharp\intro\quick_sort\obj\Debug\netcoreapp2.0\quick_sort.pdb

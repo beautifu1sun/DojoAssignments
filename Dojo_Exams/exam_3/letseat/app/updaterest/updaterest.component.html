@@ -1,0 +1,15 @@
+<h3>Edit a restaurant</h3>
+<form (submit)="update()">
+  <label for="editRestaurant.name">Restaurant Name:</label>
+  <br>
+  <input type="text" [(ngModel)]="editRestaurant.name" name="editRestaurant.name" id="editRestaurant.name" required minlength="3" #name="ngModel">
+  <br>
+  <p *ngIf="errorsOn && !name.valid"><span>Restaurant names must contain at least three characters!</span></p>
+  <label for="editRestaurant.cuisine">Cuisine:</label>
+  <br>
+  <input type="text" [(ngModel)]="editRestaurant.cuisine" name="editRestaurant.cuisine" id="editRestaurant.cuisine" required minlength="3" #cuisine="ngModel">
+  <br>
+  <p *ngIf="errorsOn && !cuisine.valid"><span>Cuisine description must contain at least three characters!</span></p>
+  <button (click)="cancel()" id="cancelButton">Cancel</button>
+  <input type="submit" id="submitButton" value="Edit">
+</form>

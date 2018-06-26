@@ -1,0 +1,27 @@
+*{
+    padding: 3px;
+    margin: 3px;
+    font-size: 15px;
+}
+#submitButton{
+    background-color: #66bbff;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#cancelButton{
+    background-color: #e1d5e7;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid palevioletred;
+}
+span{
+    color: red;
+}
+form{
+    border: 2px solid black;
+    display: inline-block;
+}

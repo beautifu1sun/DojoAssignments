@@ -1,0 +1,50 @@
+*{
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 15px;
+}
+table{
+    border-collapse: collapse;
+    display: inline-block; 
+    vertical-align: top;
+}
+table, th, td{
+    border: 2px solid black;
+}
+#newB{
+    background-color: #6b8186;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+}
+.reviewsB{
+    background-color: #707d8d;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold
+}
+.updateB{
+    background-color: #edd8c2;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold
+}
+.deleteB{
+    background-color: #9d939a;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold
+}
+.deleteB:disabled{
+    background-color: darkgray;
+    color: gray;
+}
+th{
+    color: white;
+    background-color: #d3d3d3;
+}
+#edit{
+    display: inline-block; 
+    border: 2px solid black;
+}

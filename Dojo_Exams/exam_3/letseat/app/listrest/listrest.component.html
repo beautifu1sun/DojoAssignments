@@ -1,0 +1,24 @@
+<button (click)="newRest()" id="newB">New Restaurant</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th>Ciusine</th>
+      <th>Actions available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rest of rests">
+      <td>{{ rest.name }}</td>
+      <td>{{ rest.cuisine }}</td>
+      <td>
+        <button (click)="readReviews(rest._id)" class="reviewsB">Read Reviews</button>
+        <button (click)="update(rest._id)" class="updateB">Update</button>
+        <button (click)="delete(rest._id)" class="deleteB" [disabled]="rest.disabled">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-updaterest *ngIf="editOn" [id]="updateId" id="edit"></app-updaterest>
